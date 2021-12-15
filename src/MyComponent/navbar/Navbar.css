@@ -1,0 +1,39 @@
+.nav__content a{
+    font-family: 'Roboto', sans-serif;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 20px;
+    color:#010101;
+
+}
+.nav__content a:hover{
+    font-weight:bold
+
+}
+
+
+.header__top_navigator{
+    width: 60%;
+}
+
+.nav__content{
+    display: flex;
+    border-bottom:2px solid #787878;
+    align-content: stretch;
+    justify-content: space-between;
+    width: 80%;
+    padding-bottom: 10px;
+
+}
+.nav__network{
+
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+li{
+    list-style-type: none;
+}
+

@@ -1,0 +1,18 @@
+.header{
+
+background: #f4f4f4;
+}
+
+.header__top {
+    display: flex;
+    border-bottom: 1px solid #787878;
+    margin: 10px 150px 0 150px;
+    align-content: stretch;
+    justify-content: space-around;
+    background:  #eeeeee  ;
+
+}
+
+.header__top_img{
+padding-top: 15px;
+}
