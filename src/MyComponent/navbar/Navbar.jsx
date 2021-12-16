@@ -3,6 +3,7 @@ import './Navbar.css';
 import Icon from './icon VK.png'
 import Insta from './Insta.png'
 
+import {Link} from "react-router-dom";
 
 function Navbar(){
 
@@ -13,6 +14,7 @@ function Navbar(){
                   <li><a href="#article">О&nbsp;студии</a></li>
                  <li> <a href="#Form">Записаться на курс</a></li>
                  <li><a href="#Footer">Котакты</a></li>
+                 <li><Link to="/admin">Администратор</Link></li>
             </ul>
             <ul className="nav__network" >
                 <li><a href="https://vk.com/teatr_izhevsk" target="_blank" rel="nofollow noopener noreferer"> <img src={Icon} alt="icon VK"/></a></li>

@@ -6,7 +6,7 @@ import Ind from './Id.png';
 import Course from "../Course/Course";
 import UserForm from "../UserForm/UserForm";
 import {UserContext} from "../../context";
-
+import UserInfo from "../UserInfo/UserInfo";
 
 function MainForm() {
 
@@ -51,10 +51,7 @@ const courses=[
             </div>
             { isUser
                 ?
-                <div className="main__form-input">
-                    <h2>Вы вошли</h2>
-                    <p>Выберите курс</p>
-                </div>
+                <UserInfo/>
                 :
                 <div className="main__form-input">
                     <h2>Ваш танцевальный курс</h2>
