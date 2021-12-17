@@ -5,13 +5,14 @@ const UserForm = () => {
 
 const [name,setName]= useState('');
 const [tell, setTell]= useState('');
-const {setIsUser} = useContext(UserContext);
+const {setIsUser, setUserCard} = useContext(UserContext);
 
    function onSubmit(e){
        e.preventDefault();
        localStorage.setItem('name', name);
        localStorage.setItem('tell', tell);
        setIsUser(true);
+       setUserCard({ name: name, tel: tell });
    }
 
 

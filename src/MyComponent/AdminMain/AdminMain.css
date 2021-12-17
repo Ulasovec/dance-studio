@@ -1,0 +1,11 @@
+.admin__user-card{
+    display: flex;
+    flex-direction: column;
+}
+.admin{
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}

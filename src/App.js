@@ -5,13 +5,16 @@ import Main from "./MyComponent/main/Main";
 import Footer from "./MyComponent/footer/Footer";
 import {UserContext} from "./context";
 import AdminInput from "./MyComponent/AdminInput/AdminInput";
-import {Route, Routes} from "react-router-dom";
+import {Redirect, Route, Routes} from "react-router-dom";
+import AdminMain from "./MyComponent/AdminMain/AdminMain";
+import CourseInfo from "./MyComponent/CourseInfo/CourseInfo";
 
 function App() {
     const [isUser, setIsUser] = useState(false);
     const [isAuth, setIsAuth] = useState(false);
+    const [userCard, setUserCard] = useState(undefined);
   return (
-      <UserContext.Provider value={{isUser, setIsUser, isAuth, setIsAuth}}>
+      <UserContext.Provider value={{isUser, setIsUser, isAuth, setIsAuth, userCard, setUserCard}}>
         <div className="body">
 
             <Routes>
@@ -21,11 +24,14 @@ function App() {
                     <Footer/>
                 </div>}/>
                 <Route path="/admin" element = {<div><AdminInput/></div>}/>
+                <Route path="/adminMain" element = {<div><AdminMain/></div>}/>
+                <Route path="/course/:id" element = {<CourseInfo/>}/>
+
             </Routes>
 
 
 
-
+>
         </div>
 
 
