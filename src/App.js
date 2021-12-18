@@ -13,8 +13,9 @@ function App() {
     const [isUser, setIsUser] = useState(false);
     const [isAuth, setIsAuth] = useState(false);
     const [userCard, setUserCard] = useState(undefined);
+    const [isDisabled, setIsDisabled] = useState(false);
   return (
-      <UserContext.Provider value={{isUser, setIsUser, isAuth, setIsAuth, userCard, setUserCard}}>
+      <UserContext.Provider value={{isUser, setIsUser, isAuth, setIsAuth, userCard, setUserCard,isDisabled, setIsDisabled}}>
         <div className="body">
 
             <Routes>

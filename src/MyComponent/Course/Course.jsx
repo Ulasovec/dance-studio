@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 
 import Dance from './Dance.png';
 import {UserContext} from "../../context";
@@ -6,7 +6,8 @@ import {UserContext} from "../../context";
 
 const Course = (props) => {
 
-    const {isUser, userCard, setUserCard} = useContext(UserContext);
+    const {isUser, userCard, setUserCard,isDisabled, setIsDisabled} = useContext(UserContext);
+    const [borderState,setBorderState] = useState(false);
 
     function saveUserCard(newUserCard) {
         const name = newUserCard.name;
@@ -32,15 +33,17 @@ const Course = (props) => {
         console.log(newCard);
         setUserCard(newCard);
         saveUserCard(newCard);
+        setIsDisabled(true);
+        setBorderState(true);
     }
 
     return (
-        <div>
+        <div style={borderState ? {backgroundColor: 'teal'} : {}}>
             <img src={Dance} alt="icon dance"/>
             <h2>{props.title}</h2>
             <p>{props.description}</p>
             <p>{props.price}</p>
-            <button disabled={!isUser} onClick={courseReg}>Записаться на курс</button>
+            <button disabled={!isUser || isDisabled} onClick={courseReg}>Записаться на курс</button>
         </div>
     );
 };

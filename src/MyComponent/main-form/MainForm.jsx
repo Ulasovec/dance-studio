@@ -8,10 +8,11 @@ import UserForm from "../UserForm/UserForm";
 import {UserContext} from "../../context";
 import UserInfo from "../UserInfo/UserInfo";
 import {courses} from "../../database/courses";
+import UserMessage from "../UserMessage/UserMessage";
 
 function MainForm() {
 
-    const {isUser} = useContext(UserContext);
+    const {isUser,isDisabled} = useContext(UserContext);
 
     return (
         <div className="main__form-background">
@@ -23,7 +24,7 @@ function MainForm() {
             </div>
             { isUser
                 ?
-                <UserInfo/>
+                !isDisabled ? <UserInfo/> : <UserMessage/>
                 :
                 <div className="main__form-input">
                     <h2>Ваш танцевальный курс</h2>
