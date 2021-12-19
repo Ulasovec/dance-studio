@@ -1,6 +1,6 @@
-import Dance from "../MyComponent/main-form/Dance.png";
-import Teatr from "../MyComponent/main-form/Teatr.png";
-import Ind from "../MyComponent/main-form/Id.png";
+import Dance from "../images/Dance.png";
+import Teatr from "../images/Teatr.png";
+import Ind from "../images/Id.png";
 
 export const courses = [
     {

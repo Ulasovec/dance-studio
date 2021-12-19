@@ -1,8 +1,5 @@
 import React, {useContext} from "react";
 import './MainForm.css';
-import Dance from './Dance.png';
-import Teatr from './Teatr.png';
-import Ind from './Id.png';
 import Course from "../Course/Course";
 import UserForm from "../UserForm/UserForm";
 import {UserContext} from "../../context";
@@ -12,27 +9,28 @@ import UserMessage from "../UserMessage/UserMessage";
 
 function MainForm() {
 
-    const {isUser,isDisabled} = useContext(UserContext);
+    const {isUser, isDisabled} = useContext(UserContext);
 
     return (
         <div className="main__form-background">
-        <div className="main__form" id="Form">
-            <div className="main__form-card">
-                {courses.map(item => (
-                    <Course key={item.id} id={item.id} title={item.title} description={item.description} price={item.price} />
-                ))}
-            </div>
-            { isUser
-                ?
-                !isDisabled ? <UserInfo/> : <UserMessage/>
-                :
-                <div className="main__form-input">
-                    <h2>Ваш танцевальный курс</h2>
-                    <UserForm/>
-
+            <div className="main__form" id="Form">
+                <div className="main__form-card">
+                    {courses.map(item => (
+                        <Course key={item.id} id={item.id} title={item.title} description={item.description}
+                                price={item.price}/>
+                    ))}
                 </div>
-            }
-        </div>
+                {isUser
+                    ?
+                    !isDisabled ? <UserInfo/> : <UserMessage/>
+                    :
+                    <div className="main__form-input">
+                        <h2>Ваш танцевальный курс</h2>
+                        <UserForm/>
+
+                    </div>
+                }
+            </div>
         </div>
     )
 }

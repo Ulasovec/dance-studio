@@ -31,6 +31,7 @@ main{
     width: 40%;
     margin-right: 45px;
 }
+
 .main__content-img{
     width: 60%;
     display: grid;
@@ -54,4 +55,7 @@ main{
 }
 .main__content-article p{
     font-family: 'Roboto', sans-serif;
+}
+.main__content-article span{
+    font-weight:bold
 }

@@ -1,13 +1,13 @@
 import React, {useContext, useState} from 'react';
 
-import Dance from './Dance.png';
+
 import {UserContext} from "../../context";
 
 
 const Course = (props) => {
 
-    const {isUser, userCard, setUserCard,isDisabled, setIsDisabled} = useContext(UserContext);
-    const [borderState,setBorderState] = useState(false);
+    const {isUser, userCard, setUserCard, isDisabled, setIsDisabled} = useContext(UserContext);
+    const [borderState, setBorderState] = useState(false);
 
     function saveUserCard(newUserCard) {
         const name = newUserCard.name;
@@ -18,19 +18,18 @@ const Course = (props) => {
         const foundUserIndex = allUsers.findIndex(item => item.name === name && item.tel === tel);
         // if user exists rewrite course title
         if (foundUserIndex === -1) {
-            allUsers.unshift({ name, tel, courseID });
+            allUsers.unshift({name, tel, courseID});
         } else {
             allUsers[foundUserIndex].courseID = courseID;
         }
         // Limit number of users in localStorage
-        if (allUsers.length > 20) allUsers = allUsers.slice(0,20);
+        if (allUsers.length > 20) allUsers = allUsers.slice(0, 20);
         allUsersStr = JSON.stringify(allUsers);
         localStorage.setItem('users', allUsersStr);
     }
 
     function courseReg() {
         const newCard = {...userCard, courseID: props.id};
-        console.log(newCard);
         setUserCard(newCard);
         saveUserCard(newCard);
         setIsDisabled(true);
@@ -39,7 +38,7 @@ const Course = (props) => {
 
     return (
         <div style={borderState ? {backgroundColor: 'teal'} : {}}>
-            <img src={Dance} alt="icon dance"/>
+            <img src="" alt=""/>
             <h2>{props.title}</h2>
             <p>{props.description}</p>
             <p>{props.price}</p>

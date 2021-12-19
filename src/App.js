@@ -14,31 +14,26 @@ function App() {
     const [isAuth, setIsAuth] = useState(false);
     const [userCard, setUserCard] = useState(undefined);
     const [isDisabled, setIsDisabled] = useState(false);
-  return (
-      <UserContext.Provider value={{isUser, setIsUser, isAuth, setIsAuth, userCard, setUserCard,isDisabled, setIsDisabled}}>
-        <div className="body">
+    return (
+        <UserContext.Provider
+            value={{isUser, setIsUser, isAuth, setIsAuth, userCard, setUserCard, isDisabled, setIsDisabled}}>
+            <div>
+                <Routes>
+                    <Route path="/" element={
+                        <div>
+                            <Header/>
+                            <Main/>
+                            <Footer/>
+                        </div>}/>
+                    <Route path="/admin" element={<AdminInput/>}/>
+                    <Route path="/adminMain" element={<AdminMain/>}/>
+                    <Route path="/course/:id" element={<CourseInfo/>}/>
 
-            <Routes>
-                <Route path="/" element = {<div>
-                    <Header/>
-                    <Main/>
-                    <Footer/>
-                </div>}/>
-                <Route path="/admin" element = {<div><AdminInput/></div>}/>
-                <Route path="/adminMain" element = {<div><AdminMain/></div>}/>
-                <Route path="/course/:id" element = {<CourseInfo/>}/>
+                </Routes>
+            </div>
 
-            </Routes>
-
-
-
->
-        </div>
-
-
-
-
-      </UserContext.Provider>
-  );
+        </UserContext.Provider>
+    );
 }
+
 export default App;

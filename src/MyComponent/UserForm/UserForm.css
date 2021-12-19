@@ -1,0 +1,13 @@
+.Form__User{
+   border-top: 1px solid #787878;
+}
+.Form__User-form{
+
+}
+.Form__User-form label{
+   margin-top: 8px;
+}
+.Form__User-form button{
+   margin-top: 8px;
+   cursor: pointer;
+}
