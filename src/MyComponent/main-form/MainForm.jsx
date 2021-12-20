@@ -18,8 +18,10 @@ function MainForm() {
                     {courses.map(item => (
                         <Course key={item.id} id={item.id} title={item.title} description={item.description}
                                 price={item.price}/>
+
                     ))}
                 </div>
+
                 {isUser
                     ?
                     !isDisabled ? <UserInfo/> : <UserMessage/>

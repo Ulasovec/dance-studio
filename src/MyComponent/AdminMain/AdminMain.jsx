@@ -7,8 +7,14 @@ import {Link} from "react-router-dom";
 const AdminMain = () => {
     const {isAuth} = useContext(UserContext);
     const [value,setValue] = useState('');
+    let allUsersStr = localStorage.getItem('users');
+    let allUsers = JSON.parse(allUsersStr) || [];
+    const [searchUsers, setSearchUsers] = useState(allUsers);
 
-
+    useEffect(() => {
+        const res = allUsers.filter((item) => item.name.toLowerCase().includes(value.toLowerCase()))
+        setSearchUsers(res);
+    }, [value]);
 
     if (!isAuth) {
         return (
@@ -16,12 +22,6 @@ const AdminMain = () => {
         )
     }
 
-    let allUsersStr = localStorage.getItem('users');
-    let allUsers = JSON.parse(allUsersStr) || [];
-
-console.log(allUsers);
-
-console.log(value);
     return (
         <div className="admin">
             <h1>Информация о клиентах</h1>
@@ -32,7 +32,7 @@ console.log(value);
             </form>
             <div className="admin__user-info">
                 {
-                    allUsers.map( item => (
+                    searchUsers.map( item => (
                         <div key={item.name+item.tel}>
                             <h2>Карточка клиента</h2>
                             <p>Имя: {item.name}</p>

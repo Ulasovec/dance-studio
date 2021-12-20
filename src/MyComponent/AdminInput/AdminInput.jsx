@@ -1,39 +1,48 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {UserContext} from "../../context";
 import {useNavigate} from "react-router-dom";
 import './AdminInput.css';
-
+import admins from "../../database/inputAdmins";
+//import getUsers from "../../utils/getUsers";
 
 const AdminInput = () => {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
+    // const [admins, setAdmins] = useState([]);
+    //  useEffect(()=>{
+    //      getUsers().then( res => setAdmins(res))
+    //  },[]);
+
     const {setIsAuth} = useContext(UserContext);
 
-    const nameTrue = 'admin';
-    const passwordTrue = 'admin';
-    let navigate = useNavigate()
+    let navigate = useNavigate();
 
     function onSubmit(e) {
         e.preventDefault();
         localStorage.setItem('name', name);
         localStorage.setItem('password', password);
 
-        function nav() {
+        function setNavigate() {
             return navigate('/adminMain');
         }
 
-        function navhome() {
+        function setNavigateHome() {
             return navigate('/');
         }
 
-        if (nameTrue === name && passwordTrue === password) {
+         if (admins[0].nameTrue === name && admins[0].passwordTrue === password || admins[1].nameTrue === name && admins[1].passwordTrue === password) {
             setIsAuth(true);
-            nav();
+            setNavigate();
+
         } else {
             alert("Не корректный ввод даных")
-            navhome();
+            setNavigateHome();
         }
 
+    }
+
+    if(admins.length === 0){
+        return (<div>Подождите, идёт загрузка данных.</div>);
     }
 
     return (
