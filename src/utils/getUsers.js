@@ -1,10 +1,11 @@
 import axios from "axios";
 
 export default async function getUsers() {
-    try { const admins = await axios('localhost:8080/user');
-        return admins;
+    try {
+        const response = await axios.get('http://localhost:8080/user');
+        return response.data;
     }
     catch (e) {
-        console.log(e);
+        console.log('GetUsers ERROR:', e);
     }
 };

@@ -1,10 +1,10 @@
 let users = [
     {
-        adminTrue: 'admin',
+        nameTrue: 'admin',
         passwordTrue: 'admin'
     },
     {
-        adminTrue: 'user',
+        nameTrue: 'user',
         passwordTrue: 'user'
     }
 ]

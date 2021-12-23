@@ -13,7 +13,7 @@ function Navbar() {
             <ul className="nav__content">
                 <li><a href="#article">О&nbsp;студии</a></li>
                 <li><a href="#Form">Записаться на курс</a></li>
-                <li><a href="#Footer">Котакты</a></li>
+                <li><a href="#Footer">Контакты</a></li>
                 <li><Link to="/admin">Администратор</Link></li>
             </ul>
             <ul className="nav__network">

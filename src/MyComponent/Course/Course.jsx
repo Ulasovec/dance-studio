@@ -15,11 +15,13 @@ const Course = (props) => {
         const courseID = newUserCard.courseID;
         let allUsersStr = localStorage.getItem('users');
         let allUsers = JSON.parse(allUsersStr) || [];
+        // Проверка есть ли уже такой user
         const foundUserIndex = allUsers.findIndex(item => item.name === name && item.tel === tel);
-        // if user exists rewrite course title
         if (foundUserIndex === -1) {
-            allUsers.unshift({name, tel, courseID});
+            // если не найдено, то добавить в начало массива
+            allUsers = [newUserCard, ...allUsers];
         } else {
+            // иначе заменить ID курса
             allUsers[foundUserIndex].courseID = courseID;
         }
         // Limit number of users in localStorage

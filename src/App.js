@@ -14,6 +14,7 @@ function App() {
     const [isAuth, setIsAuth] = useState(false);
     const [userCard, setUserCard] = useState(undefined);
     const [isDisabled, setIsDisabled] = useState(false);
+
     return (
         <UserContext.Provider
             value={{isUser, setIsUser, isAuth, setIsAuth, userCard, setUserCard, isDisabled, setIsDisabled}}>
@@ -28,10 +29,8 @@ function App() {
                     <Route path="/admin" element={<AdminInput/>}/>
                     <Route path="/adminMain" element={<AdminMain/>}/>
                     <Route path="/course/:id" element={<CourseInfo/>}/>
-
                 </Routes>
             </div>
-
         </UserContext.Provider>
     );
 }

@@ -1,6 +1,5 @@
 
-
-const admins =[
+export const admins =[
     {
         nameTrue : 'admin',
         passwordTrue : 'admin',
@@ -11,5 +10,3 @@ const admins =[
         passwordTrue : 'user',
     }
 ];
-
-export default admins;

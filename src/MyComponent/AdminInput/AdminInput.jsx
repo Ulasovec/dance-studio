@@ -2,16 +2,20 @@ import React, {useContext, useEffect, useState} from 'react';
 import {UserContext} from "../../context";
 import {useNavigate} from "react-router-dom";
 import './AdminInput.css';
-import admins from "../../database/inputAdmins";
-//import getUsers from "../../utils/getUsers";
+//import {admins} from "../../database/inputAdmins";
+import getUsers from "../../utils/getUsers";
 
 const AdminInput = () => {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
-    // const [admins, setAdmins] = useState([]);
-    //  useEffect(()=>{
-    //      getUsers().then( res => setAdmins(res))
-    //  },[]);
+
+    const [admins, setAdmins] = useState([]);
+     useEffect( () => {
+         getUsers().then( res => {
+             console.log('ADMINS', res);
+             setAdmins(res);
+         });
+     },[]);
 
     const {setIsAuth} = useContext(UserContext);
 
@@ -19,8 +23,6 @@ const AdminInput = () => {
 
     function onSubmit(e) {
         e.preventDefault();
-        localStorage.setItem('name', name);
-        localStorage.setItem('password', password);
 
         function setNavigate() {
             return navigate('/adminMain');

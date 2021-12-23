@@ -1,8 +1,9 @@
 main{
     background: #f4f4f4 ;
+
 }
 .main{
-    margin: 0px 150px 0px 150px;
+    margin: 0 150px 0 150px;
 }
 .main__start{
     display: flex;
