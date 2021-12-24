@@ -12,9 +12,8 @@ const AdminInput = () => {
     const [admins, setAdmins] = useState([]);
      useEffect( () => {
          getUsers().then( res => {
-             console.log('ADMINS', res);
              setAdmins(res);
-         });
+         })
      },[]);
 
     const {setIsAuth} = useContext(UserContext);

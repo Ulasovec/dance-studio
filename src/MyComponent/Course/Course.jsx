@@ -28,6 +28,14 @@ const Course = (props) => {
         if (allUsers.length > 20) allUsers = allUsers.slice(0, 20);
         allUsersStr = JSON.stringify(allUsers);
         localStorage.setItem('users', allUsersStr);
+
+        // let allUsersStr = localStorage.getItem('users');
+        // let allUsers = JSON.parse(allUsersStr) || [];
+        //
+        // allUsers = [newUserCard, ...allUsers];
+        //
+        // allUsersStr = JSON.stringify(allUsers);
+        // localStorage.setItem('users', allUsersStr);
     }
 
     function courseReg() {

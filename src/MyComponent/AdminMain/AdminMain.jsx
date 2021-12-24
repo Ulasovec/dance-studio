@@ -9,6 +9,7 @@ const AdminMain = () => {
     const [value,setValue] = useState('');
     let allUsersStr = localStorage.getItem('users');
     let allUsers = JSON.parse(allUsersStr) || [];
+
     const [searchUsers, setSearchUsers] = useState(allUsers);
 
     useEffect(() => {

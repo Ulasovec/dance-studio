@@ -13,8 +13,6 @@ const UserForm = () => {
         if (!name || !tell) {
             alert('Для записи на курс заполните поля');
         } else {
-            localStorage.setItem('name', name);
-            localStorage.setItem('tell', tell);
             setIsUser(true);
             setUserCard({name: name, tel: tell});
         }

@@ -6,6 +6,6 @@ export default async function getUsers() {
         return response.data;
     }
     catch (e) {
-        console.log('GetUsers ERROR:', e);
+        console.log('GetUsers ERROR:', {e});
     }
 };
